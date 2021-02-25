@@ -1,6 +1,6 @@
 // Code for Beginning Java's Cake & Cupcake Shop Tutorial
 
-import java.util.Scanner; // Needed for the Scanner class to read input
+import java.util.*; // Needed for the Scanner class to read input
 
 public class custom_order {
 
@@ -12,8 +12,20 @@ public class custom_order {
     // TEST CODE
 
     // STEP 2 CREATE A SCANNER OBEJCT, DECLARE VARAIBLES, & PRINT STATEMENTS
+    Scanner keyboard = new Scanner(System.in);
 
+    String firstName; // The user first name variable
+    String itemOrder; // Item order
+    String frostingType; // Frosting order
+    String fillingType; // Filling order
+    String toppings; // Toppings ordered
+    String input; // User input
+    double cost = 15.00; // Cost of cake and cupcakes
+    final double TAX_RATE = .08; // Sales tax rate
+    double tax; // Amount of tax
     // Introduce shop and prompt user to input first name
+    System.out.println("Welcome to Javas Cake & Cupcake Shop!");
+    System.out.println("We make custom cakes with our secret cake batter!");
 
     // TEST CODE
 
