@@ -4,6 +4,10 @@ import java.util.*; // Needed for the Scanner class to read input
 
 public class custom_order {
 
+  // Extra stip
+  static int totalCost;
+  static String addOnList;
+
   // STEP 1 PRINTING HELLO WORLD TO CONSOLE
   public static void main(String[] args) {
 
@@ -23,6 +27,7 @@ public class custom_order {
     double cost = 15.00; // Cost of cake and cupcakes
     final double TAX_RATE = .08; // Sales tax rate
     double tax; // Amount of tax
+
     // Introduce shop and prompt user to input first name
     System.out.println("Welcome to Javas Cake & Cupcake Shop!");
     System.out.println("We make custom cakes with our secret cake batter!");
@@ -62,7 +67,10 @@ public class custom_order {
     System.out.println("What type of FROSTING do you want? ");
     System.out.println("Vanilla, Chocolate, Strawberry or Coco");
     frostingType = keyboard.nextLine();
-
+    if (frostingType != "no") {
+      addItem(frostingType, 2);
+      addOnList += ", ";
+    }
     // TEST CODE
 
     // STEP 7 PROMPT USER TO CHOOSE FILLING
@@ -70,6 +78,10 @@ public class custom_order {
     System.out.println("What type of FILLING do you want? ");
     System.out.println("Mocha, Mint, Lemon, Caramel or Raspberry");
     fillingType = keyboard.nextLine();
+    if (fillingType != "no") {
+      addItem(fillingType, 2);
+      addOnList += ", ";
+    }
 
     // TEST CODE
 
@@ -78,6 +90,10 @@ public class custom_order {
     System.out.println("What type of TOPPINGS do you want? ");
     System.out.println("Sprinkless, Cinnamon, Cocoa, Nuts");
     toppings = keyboard.nextLine();
+    if (toppings != "no") {
+      addItem(toppings, 2);
+      addOnList += ", ";
+    }
 
     // TEST CODE
 
@@ -91,7 +107,6 @@ public class custom_order {
     System.out.println("Toppings: " + toppings);
     System.out.println("_________________________________________________");
 
-
     // TEST CODE
 
     // STEP 10 DISPLAY COST AND SALES TAX
@@ -100,5 +115,11 @@ public class custom_order {
     System.out.printf("The tax is: $%.2f\n", tax);
     System.out.printf("The total due is: $%.2f\n", (tax + cost));
 
+  }
+
+  // belongs to extra step
+  static void addItem(String item, int cost) {
+    totalCost += cost;
+    addOnList += item;
   }
 }
